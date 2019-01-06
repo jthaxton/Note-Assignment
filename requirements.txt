@@ -4,3 +4,4 @@ gunicorn==19.7.1
 postgres==2.2.1
 psycopg2==2.7.5 --no-binary psycopg2pytz==2017.2
 whitenoise==3.3.0
+beautifulsoup4==4.7.0
