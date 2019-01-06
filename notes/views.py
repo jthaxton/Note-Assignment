@@ -5,11 +5,9 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import RequestContext
 from django.shortcuts import render_to_response
-from . import models
-from models import Note
+from .models import Note
 import datetime
 from bs4 import BeautifulSoup
-from django.views.decorators.csrf import csrf_protect
 
 
 
