@@ -1,1 +1,1 @@
-web: gunicorn -b "0.0.0.0:$PORT" -w 3 Basis_Challenge.wsgi --log-file -
+gunicorn_django --preload -b "0.0.0.0:$PORT" 
