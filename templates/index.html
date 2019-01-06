@@ -10,7 +10,7 @@
 </head>
 <header>Welcome to Note Application!</header>
 <body>
-    <form method="POST" action="../Basis_Challenge/add_note">
+    <form method="POST" action={% url 'add_note' %}>
         {% csrf_token %}
 
 
@@ -18,8 +18,11 @@
         <input type="submit" name="" id="" value="submit">
     </form>
     {% for element in arr %}
-     <li> {{ element }} </li>
-
+    <form method="POST" action={% url 'delete_note' pk=element.id %}>
+        {% csrf_token %}
+        <li> {{ element }} </li>
+        <input type="submit" value='Delete'>
+    </form>
     {% endfor %}
 
 </body>

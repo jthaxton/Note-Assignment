@@ -18,33 +18,35 @@ def index(request):
     arr = []
     for element in queryset:
         arr.insert(0, element)
+    return render(request, 'index.html', {'arr': arr})
+
+def add_note(request):
+    context = RequestContext(request, {})
+    queryset = Note.objects.all()
+    arr = []
+    for element in queryset:
+        arr.insert(0, element)
 
     if request.method == 'POST':
         note = BeautifulSoup(request.POST['note']).get_text()
         date = datetime.datetime.now()
         obj = Note(note_text=note, pub_date=date)
         obj.save()
-        return render(request,'index.html', {'arr': arr})
-    elif request.method == 'DELETE':
-        element.delete()
-        arr = []
-        for element in queryset:
-            arr.insert(0, element)
         return render(request, 'index.html', {'arr': arr})
+    return render(request, 'index.html', {'arr': arr})
 
-
-    return render(request,'index.html', {'arr': arr})
-
-def add_note(request):
-    if request.method == 'POST':
-        return HttpResponse(request.POST)
-    return render(request, 'index.html')
 
 
 def delete_note(request, pk):
-    
-    x = request.post.get('id', False)
-    pdb.set_trace()
+    context = RequestContext(request, {})
+    Note.objects.get(id=pk).delete()
+    queryset = Note.objects.all()
+    arr = []
+    for element in queryset:
+        arr.insert(0, element)
     if request.method == 'POST':
-        print('hi')
-    return render(request, 'index.html', RequestContext(request))
+            arr = []
+            for element in queryset:
+                arr.insert(0, element)
+            return render(request, 'index.html', {'arr': arr})
+
