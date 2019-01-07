@@ -1,4 +1,5 @@
 # import django_heroku
+import dj-database-url
 """
 Django settings for Basis_Challenge project.
 
@@ -128,8 +129,11 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
-STATICFILES_DIRS = ("/css",)
-STATIC_ROOT = ''
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'project_name/static')]
+# STATICFILES_DIRS = ("/css",)
+STATIC_ROOT = os.path.join(BASE_DIR, ‘static’)
 STATIC_URL = '/static/'
 
 # django_heroku.settings(locals())
+db_from_env = dj_database_url.config()
+DATABASES[‘default’].update(db_from_env)
