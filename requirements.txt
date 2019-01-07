@@ -16,7 +16,7 @@ mccabe==0.6.1
 patterns==0.3
 Pillow==5.3.0
 postgres==2.2.1
-psycopg2==2.7.1
+psycopg2==2.7.1 --no-binary psycopg2
 pycodestyle==2.4.0
 pylint==1.9.3
 pytz==2017.2
