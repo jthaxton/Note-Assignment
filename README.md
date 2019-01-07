@@ -40,3 +40,6 @@ def delete_note(request, pk):
                 arr.insert(0, element)
             return render(request, 'index.html', {'arr': arr})
 ```
+# Demo image
+
+![Index]( ./notes/static/img/sample.png "Note App Sample Picture")

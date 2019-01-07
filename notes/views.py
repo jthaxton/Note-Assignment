@@ -31,6 +31,7 @@ def add_note(request):
         date = datetime.datetime.now()
         obj = Note(note_text=note, pub_date=date)
         obj.save()
+        arr.insert(0,obj)
         return render(request, 'index.html', {'arr': arr})
     return render(request, 'index.html', {'arr': arr})
 
