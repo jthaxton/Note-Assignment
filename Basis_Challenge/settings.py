@@ -32,7 +32,7 @@ SECRET_KEY = 'v58rr5rwk0ftsj243a=mga%1%h0iolxtag!husta*+bgg!%f@i'
 DEBUG = False
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', '[::1]',
-                 'https://whispering-bayou-74902.herokuapp.com/']
+                 'https://whispering-bayou-74902.herokuapp.com/', '0.0.0.0']
 
 DEBUG_PROPAGATE_EXCEPTIONS = True
 
