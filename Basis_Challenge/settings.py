@@ -1,3 +1,4 @@
+import django_heroku
 """
 Django settings for Basis_Challenge project.
 
@@ -130,3 +131,5 @@ USE_TZ = True
 STATICFILES_DIRS = ("/css",)
 STATIC_ROOT = ''
 STATIC_URL = '/static/'
+
+django_heroku.settings(locals())
