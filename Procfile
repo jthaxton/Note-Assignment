@@ -1,1 +1,1 @@
-web: gunicorn wsgi:application --preload --log-file - --log-level debug
+web: python manage.py runserver
